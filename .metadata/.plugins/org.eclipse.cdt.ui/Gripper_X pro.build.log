@@ -1,0 +1,10 @@
+18:51:42 **** Incremental Build of configuration Debug for project Gripper_X pro ****
+make -j12 all 
+arm-none-eabi-size   Gripper_X\ pro.elf 
+   text	   data	    bss	    dec	    hex	filename
+  40668	     24	   8672	  49364	   c0d4	Gripper_X pro.elf
+Finished building: default.size.stdout
+ 
+
+18:51:42 Build Finished. 0 errors, 0 warnings. (took 365ms)
+

@@ -1,0 +1,65 @@
+17:38:01 **** Incremental Build of configuration Debug for project SPI Test ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/as5048a.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/as5048a.d" -MT"Core/Src/as5048a.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/as5048a.o"
+In file included from ../Core/Src/as5048a.c:8:
+../Core/Inc/as5048a.h:27:33: warning: 'struct AS5048A' declared inside parameter list will not be visible outside of this definition or declaration
+   27 |  uint16_t (*transaction)(struct AS5048A *this, uint16_t data);
+      |                                 ^~~~~~~
+../Core/Src/as5048a.c: In function 'AS5048A_read':
+../Core/Src/as5048a.c:32:1: warning: control reaches end of non-void function [-Wreturn-type]
+   32 | }
+      | ^
+../Core/Src/as5048a.c: In function 'AS5048A_write':
+../Core/Src/as5048a.c:37:1: warning: control reaches end of non-void function [-Wreturn-type]
+   37 | }
+      | ^
+../Core/Src/as5048a.c: In function 'AS5048A_getRawRotation':
+../Core/Src/as5048a.c:42:1: warning: control reaches end of non-void function [-Wreturn-type]
+   42 | }
+      | ^
+../Core/Src/as5048a.c: In function 'AS5048A_getState':
+../Core/Src/as5048a.c:47:1: warning: control reaches end of non-void function [-Wreturn-type]
+   47 | }
+      | ^
+../Core/Src/as5048a.c: In function 'AS5048A_error':
+../Core/Src/as5048a.c:52:1: warning: control reaches end of non-void function [-Wreturn-type]
+   52 | }
+      | ^
+../Core/Src/as5048a.c: In function 'AS5048A_getGain':
+../Core/Src/as5048a.c:57:1: warning: control reaches end of non-void function [-Wreturn-type]
+   57 | }
+      | ^
+../Core/Src/as5048a.c: In function 'AS5048A_getErrors':
+../Core/Src/as5048a.c:62:1: warning: control reaches end of non-void function [-Wreturn-type]
+   62 | }
+      | ^
+../Core/Src/as5048a.c: In function 'AS5048A_getZeroPosition':
+../Core/Src/as5048a.c:72:1: warning: control reaches end of non-void function [-Wreturn-type]
+   72 | }
+      | ^
+../Core/Src/as5048a.c: In function 'AS5048A_normalize':
+../Core/Src/as5048a.c:77:1: warning: control reaches end of non-void function [-Wreturn-type]
+   77 | }
+      | ^
+../Core/Src/as5048a.c: In function 'AS5048A_read2angle':
+../Core/Src/as5048a.c:82:1: warning: control reaches end of non-void function [-Wreturn-type]
+   82 | }
+      | ^
+../Core/Src/as5048a.c: In function 'AS5048A_spiCalcEvenParity':
+../Core/Src/as5048a.c:87:1: warning: control reaches end of non-void function [-Wreturn-type]
+   87 | }
+      | ^
+arm-none-eabi-gcc -o "SPI Test.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Loungelab\Desktop\MCU_Test\SPI Test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI Test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SPI Test.elf
+ 
+arm-none-eabi-objdump -h -S  SPI\ Test.elf  > "SPI Test.list"
+arm-none-eabi-objcopy  -O binary  SPI\ Test.elf  "SPI Test.bin"
+arm-none-eabi-size   SPI\ Test.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6496	     20	   1732	   8248	   2038	SPI Test.elf
+Finished building: default.size.stdout
+ 
+Finished building: SPI Test.bin
+ 
+Finished building: SPI Test.list
+ 

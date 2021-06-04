@@ -1,0 +1,15 @@
+as5048a.c:10:6:AS5048A_init	24	static
+as5048a.c:18:6:AS5048A_close	16	static
+as5048a.c:23:6:AS5048A_open	16	static
+as5048a.c:28:10:AS5048A_read	16	static
+as5048a.c:34:10:AS5048A_write	16	static
+as5048a.c:39:10:AS5048A_getRawRotation	16	static
+as5048a.c:44:10:AS5048A_getState	16	static
+as5048a.c:49:9:AS5048A_error	16	static
+as5048a.c:54:9:AS5048A_getGain	16	static
+as5048a.c:59:10:AS5048A_getErrors	16	static
+as5048a.c:64:6:AS5048A_setZeroPosition	16	static
+as5048a.c:69:10:AS5048A_getZeroPosition	16	static
+as5048a.c:74:7:AS5048A_normalize	16	static
+as5048a.c:79:7:AS5048A_read2angle	16	static
+as5048a.c:84:9:AS5048A_spiCalcEvenParity	16	static

@@ -1,0 +1,20 @@
+17:57:52 **** Incremental Build of configuration Debug for project ModbusBluePill ****
+make -j12 all 
+arm-none-eabi-gcc "C:/Users/Loungelab/Desktop/Sample/Modbus-STM32-HAL-FreeRTOS-master/MODBUS-LIB/Src/Modbus.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Core/Inc -I"C:/Users/Loungelab/Desktop/Sample/Modbus-STM32-HAL-FreeRTOS-master/MODBUS-LIB/Inc" -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/MODBUS-LIB/Src/Modbus.d" -MT"Middlewares/MODBUS-LIB/Src/Modbus.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/MODBUS-LIB/Src/Modbus.o"
+arm-none-eabi-gcc -o "ModbusBluePill.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Loungelab\Desktop\Sample\Modbus-STM32-HAL-FreeRTOS-master\ModbusBluepill\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ModbusBluePill.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ModbusBluePill.elf
+ 
+arm-none-eabi-objdump -h -S  ModbusBluePill.elf  > "ModbusBluePill.list"
+arm-none-eabi-objcopy  -O binary  ModbusBluePill.elf  "ModbusBluePill.bin"
+arm-none-eabi-size   ModbusBluePill.elf 
+   text	   data	    bss	    dec	    hex	filename
+  32732	     24	   8728	  41484	   a20c	ModbusBluePill.elf
+Finished building: default.size.stdout
+ 
+Finished building: ModbusBluePill.bin
+ 
+Finished building: ModbusBluePill.list
+ 
+
+17:57:53 Build Finished. 0 errors, 0 warnings. (took 1s.256ms)
+

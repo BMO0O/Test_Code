@@ -1,0 +1,2 @@
+stm32f4xx_hal_msp.c:48:6:HAL_MspInit	8	static
+stm32f4xx_hal_msp.c:65:6:HAL_TIM_OC_MspInit	24	static

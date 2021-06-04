@@ -1,0 +1,19 @@
+/*
+ * as5048a.c
+ *
+ *  Created on: 2021. 6. 4.
+ *      Author: Loungelab
+ */
+
+#include "as5048a.h"
+
+void NewAS5048A(AS5048A* temp, SPI_HandleTypeDef* hspi, GPIO_TypeDef* arg_ps, uint16_t arg_cs){
+
+	temp->_cs = arg_cs;
+	temp->_ps = arg_ps;
+	temp->_spi = hspi;
+	temp->errorFlag = 0;
+	temp->position = 0;
+
+}
+

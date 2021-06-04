@@ -1,0 +1,31 @@
+/*
+ * as5048a.h
+ *
+ *  Created on: 2021. 6. 4.
+ *      Author: Loungelab
+ */
+
+#ifndef INC_AS5048A_H_
+#define INC_AS5048A_H_
+
+#include "stm32f1xx_hal_conf.h"
+#include <math.h>
+
+typedef struct AS5048A{
+
+	uint8_t errorFlag = 0;
+	uint16_t _cs;
+	uint16_t cs;
+	GPIO_TypeDef *_ps;
+	SPI_HandleTypeDef* _spi;
+	uint8_t dout;
+	uint8_t din;
+	uint8_t clk;
+	uint16_t position;
+	uint16_t transaction(uint16_t data);
+
+}AS5048A;
+
+AS5048A* NewAS5048A(SPI_HandleTypeDef* hspi, GPIO_TypeDef* arg_ps, uint16_t arg_cs);
+
+#endif /* INC_AS5048A_H_ */

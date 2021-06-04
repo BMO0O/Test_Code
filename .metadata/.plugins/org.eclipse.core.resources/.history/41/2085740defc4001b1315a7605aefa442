@@ -1,0 +1,39 @@
+/*
+ * as5048a.cpp
+ *
+ *  Created on: 2021. 6. 4.
+ *      Author: Loungelab
+ */
+#include "as5048a.h"
+
+AS5048A::AS5048A(SPI_HandleTypeDef* hspi, GPIO_TypeDef* arg_ps, uint16_t arg_cs){
+	_cs = arg_cs;
+	_ps = arg_ps;
+	_spi = hspi;
+	errorFlag = 0;
+	position = 0;
+}
+
+#define EN_SPI HAL_GPIO_WritePin(_ps, _cs, GPIO_PIN_RESET);
+#define DIS_SPI HAL_GPIO_WritePin(_ps, _cs, GPIO_PIN_SET);
+
+void AS5048A::init(){
+
+	AS5048A::close();
+	AS5048A::open();
+
+}
+
+void AS5048A::close(){
+	if( HAL_SPI_DeInit(_spi) != HAL_OK )
+	{
+		//USER ERROR FUNCTION
+	}
+}
+
+void AS5048A::open(){
+	if( HAL_SPI_Init(_spi) != HAL_OK )
+	{
+		//USER ERROR FUNCTION
+	}
+}

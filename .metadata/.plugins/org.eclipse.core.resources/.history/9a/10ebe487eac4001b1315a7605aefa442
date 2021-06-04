@@ -1,0 +1,31 @@
+/*
+ * as5048.h
+ *
+ *  Created on: 2021. 6. 3.
+ *      Author: Loungelab
+ */
+
+#ifndef INC_AS5048_H_
+#define INC_AS5048_H_
+
+#include "stm32f1xx.h"
+
+void AS5048A_Init(void);
+
+uint16_t AS5048A_read_always(void);
+
+uint16_t AS5048A_Read_Angle_once(void);
+
+uint16_t AS5048A_Read_Angle_once_16bit(void);
+
+uint16_t AS5048A_read(uint16_t registerAddress);
+
+uint16_t AS5048A_getRawRotation(void);
+
+uint16_t AS5048A_getRotation(void);
+
+uint16_t AS5048A_getErrors(void);
+
+void AS5048A_clear_error(void);
+
+#endif /* INC_AS5048_H_ */

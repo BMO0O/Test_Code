@@ -1,0 +1,42 @@
+15:06:04 **** Incremental Build of configuration Debug for project Current Test ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function '_write':
+../Core/Src/main.c:61:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
+  HAL_UART_Transmit(&huart1, p, len, 10);
+                             ^
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:337:0,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:700:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:114:29: warning: passing argument 2 of 'HAL_ADC_Start_DMA' from incompatible pointer type [-Wincompatible-pointer-types]
+   HAL_ADC_Start_DMA(&hadc1, &adc_val, 1);
+                             ^
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:273:0,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h:929:25: note: expected 'uint32_t * {aka long unsigned int *}' but argument is of type 'uint16_t * {aka short unsigned int *}'
+ HAL_StatusTypeDef       HAL_ADC_Start_DMA(ADC_HandleTypeDef* hadc, uint32_t* pData, uint32_t Length);
+                         ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Current Test.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Loungelab\Documents\Gripper_X\Gripper_X\Test Code\Current Test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Current Test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Current Test.elf
+ 
+arm-none-eabi-objdump -h -S  Current\ Test.elf  > "Current Test.list"
+arm-none-eabi-objcopy  -O binary  Current\ Test.elf  "Current Test.bin"
+arm-none-eabi-size   Current\ Test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  29284	    124	   8668	  38076	   94bc	Current Test.elf
+Finished building: default.size.stdout
+ 
+Finished building: Current Test.bin
+ 
+Finished building: Current Test.list
+ 
+
+15:06:05 Build Finished. 0 errors, 2 warnings. (took 1s.118ms)
+
